@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60416371acb17574b995db4e3e45aecc, type: 3}
+  m_Name: 12_RootReservoir
+  m_EditorClassIdentifier: Assembly-CSharp::TreeJam.UpgradeDefinition
+  displayName: Root Reservoir
+  description: An underground reserve for lean seasons. +45 maximum nutrient storage.
+  energyCost: 42
+  nutrientCost: 25
+  prerequisites:
+  - {fileID: 11400000, guid: 4fdf3d1c84762534482d37eb93504113, type: 2}
+  effects:
+  - type: 4
+    amount: 45

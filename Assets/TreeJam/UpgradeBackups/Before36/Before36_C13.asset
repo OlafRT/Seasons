@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91f0aad02a63d5a448f4117e34404db7, type: 3}
+  m_Name: Before36_C13
+  m_EditorClassIdentifier: Assembly-CSharp::TreeJam.UpgradeDefinition
+  displayName: Living Reservoir
+  description: Grow your sapwood storage. +45 maximum energy and +0.8 energy per second.
+  energyCost: 68
+  nutrientCost: 49
+  prerequisites:
+  - {fileID: 11400000, guid: e1a6184f6739795498b07dd40c7c0e52, type: 2}
+  exclusiveGroup: 
+  effects:
+  - type: 3
+    amount: 45
+  - type: 1
+    amount: 0.8

@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60416371acb17574b995db4e3e45aecc, type: 3}
+  m_Name: 09_SummerReserves
+  m_EditorClassIdentifier: Assembly-CSharp::TreeJam.UpgradeDefinition
+  displayName: Summer Reserves
+  description: Store the surplus from sunny days. +45 maximum energy.
+  energyCost: 40
+  nutrientCost: 28
+  prerequisites:
+  - {fileID: 11400000, guid: 37c2d12a76432bc4db765b01f90ccdbb, type: 2}
+  effects:
+  - type: 3
+    amount: 45

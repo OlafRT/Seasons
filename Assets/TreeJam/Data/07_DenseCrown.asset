@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60416371acb17574b995db4e3e45aecc, type: 3}
+  m_Name: 07_DenseCrown
+  m_EditorClassIdentifier: Assembly-CSharp::TreeJam.UpgradeDefinition
+  displayName: Dense Crown
+  description: Turn your sparse boughs into leafy pads. +12 individual leaves.
+  energyCost: 48
+  nutrientCost: 29
+  prerequisites:
+  - {fileID: 11400000, guid: d0cf1d40364d9494d9a39fe6c3b3076b, type: 2}
+  effects:
+  - type: 0
+    amount: 12
