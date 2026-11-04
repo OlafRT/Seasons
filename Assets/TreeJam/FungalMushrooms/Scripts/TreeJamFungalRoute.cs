@@ -14,12 +14,12 @@ namespace TreeJam
     {
         public TreeJamMyceliumNetwork network;
         public TreeJamSoilSurface surface;
-        [Min(.15f)] public float centerDepth = .34f;
+        [Min(.15f)] public float centerDepth = .23f;
         [Min(.15f)] public float edgeDepth = .52f;
         [Min(0f)] public float middleSag = .32f;
         [Min(.1f)] public float belowSurfaceMargin = .23f;
         [Min(.1f)] public float extendBeyondSoil = 1.2f;
-        [Range(.1f,.6f)] public float centerContactDistance = .16f;
+        [Range(0f,.6f)] public float centerContactDistance = 0f;
         [Min(0.04f)] public float mainStrandWidth = .15f;
         private LineRenderer left, right;
         private const int Steps = 42;

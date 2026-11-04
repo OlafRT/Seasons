@@ -29,6 +29,13 @@ namespace TreeJam
         public float EnergyPerSecond => (baseEnergyPerSecond + LeafCount * energyPerLeafPerSecond + bonusEnergyPerSecond) * SunlightFactor;
         public float NutrientsPerSecond => baseNutrientsPerSecond + bonusNutrientsPerSecond;
 
+        // This is the income actually deposited in the most recent simulation tick.
+        // Unlike EnergyPerSecond, it reads zero when photosynthesis stops or storage is full.
+        // Upgrade purchases and fungal-trade payouts are not included in passive income.
+        public float ActualEnergyIncomePerSecond { get; private set; }
+        public float ActualNutrientIncomePerSecond { get; private set; }
+
+
         public event Action<UpgradeDefinition> UpgradePurchased;
         private readonly HashSet<UpgradeDefinition> purchased = new HashSet<UpgradeDefinition>();
         private float bonusEnergyPerSecond;
@@ -52,8 +59,24 @@ namespace TreeJam
         private void Update()
         {
             // Day/night modulates EnergyPerSecond; nutrient production is unchanged.
+            float beforeEnergy = Energy;
+            float beforeNutrients = Nutrients;
+
             Energy = Mathf.Min(EnergyCapacity, Energy + EnergyPerSecond * Time.deltaTime);
             Nutrients = Mathf.Min(NutrientCapacity, Nutrients + NutrientsPerSecond * Time.deltaTime);
+
+            // Measure what was actually ADDED this frame, not a theoretical production
+            // rate that may be suppressed by dormancy, missing leaves, or a full bar.
+            if (Time.deltaTime > 0.000001f)
+            {
+                ActualEnergyIncomePerSecond = Mathf.Max(0f, (Energy - beforeEnergy) / Time.deltaTime);
+                ActualNutrientIncomePerSecond = Mathf.Max(0f, (Nutrients - beforeNutrients) / Time.deltaTime);
+            }
+            else
+            {
+                ActualEnergyIncomePerSecond = 0f;
+                ActualNutrientIncomePerSecond = 0f;
+            }
         }
 
         public bool IsPurchased(UpgradeDefinition upgrade)

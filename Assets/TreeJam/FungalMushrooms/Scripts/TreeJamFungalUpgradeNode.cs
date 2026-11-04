@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace TreeJam
 {
-    public enum FungalUpgradeKind { RapidFruiting, CourierHyphae, BetterReturns, SporeColony }
+    public enum FungalUpgradeKind { RapidFruiting, CourierHyphae, BetterReturns, SporeColony, FruitingFans, ExpressHyphae, GenerousSymbiosis, WinterWeb }
 
     [RequireComponent(typeof(Collider2D))]
     public sealed class TreeJamFungalUpgradeNode : MonoBehaviour

@@ -158,9 +158,15 @@ namespace TreeJam
         }
 
         public bool HasUpgrade(FungalUpgradeKind kind) => purchased.Contains(kind);
-        public float CurrentYieldMultiplier => HasUpgrade(FungalUpgradeKind.BetterReturns) ? betterReturnsMultiplier : 1f;
-        public float CurrentTravelMultiplier => HasUpgrade(FungalUpgradeKind.CourierHyphae) ? fasterCourierMultiplier : 1f;
-        public float CurrentFruitingMultiplier => HasUpgrade(FungalUpgradeKind.RapidFruiting) ? fasterFruitingMultiplier : 1f;
+        public float CurrentYieldMultiplier =>
+            (HasUpgrade(FungalUpgradeKind.BetterReturns) ? betterReturnsMultiplier : 1f) *
+            (HasUpgrade(FungalUpgradeKind.GenerousSymbiosis) ? 1.10f : 1f);
+        public float CurrentTravelMultiplier =>
+            (HasUpgrade(FungalUpgradeKind.CourierHyphae) ? fasterCourierMultiplier : 1f) *
+            (HasUpgrade(FungalUpgradeKind.ExpressHyphae) ? .80f : 1f);
+        public float CurrentFruitingMultiplier =>
+            (HasUpgrade(FungalUpgradeKind.RapidFruiting) ? fasterFruitingMultiplier : 1f) *
+            (HasUpgrade(FungalUpgradeKind.FruitingFans) ? .85f : 1f);
 
         private void Update()
         {
@@ -283,7 +289,8 @@ namespace TreeJam
             }
             fruit.ripe = false;
             fruit.growingSince = -1f;
-            float seasonal = seasons != null && seasons.CurrentSeason == TreeSeason.Winter ? winterRegrowthSlowdown : 1f;
+            float seasonal = seasons != null && seasons.CurrentSeason == TreeSeason.Winter
+                ? (HasUpgrade(FungalUpgradeKind.WinterWeb) ? 1f : winterRegrowthSlowdown) : 1f;
             fruit.nextGrowthAt = Time.time + mushroomRegrowSeconds * CurrentFruitingMultiplier * seasonal;
             if (fruit.clickCollider != null) fruit.clickCollider.enabled = false;
             fruit.transform.localScale = Vector3.zero;

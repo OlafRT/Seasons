@@ -72,9 +72,9 @@ namespace TreeJam
         {
             if (gameState == null) return;
             if (energyText != null)
-                energyText.text = $"{gameState.Energy:0} / {gameState.EnergyCapacity:0}    +{gameState.EnergyPerSecond:0.0}/s";
+                energyText.text = $"{Mathf.FloorToInt(gameState.Energy)} / {gameState.EnergyCapacity:0}    +{gameState.ActualEnergyIncomePerSecond:0.0}/s";
             if (nutrientsText != null)
-                nutrientsText.text = $"{gameState.Nutrients:0} / {gameState.NutrientCapacity:0}    +{gameState.NutrientsPerSecond:0.0}/s";
+                nutrientsText.text = $"{Mathf.FloorToInt(gameState.Nutrients)} / {gameState.NutrientCapacity:0}    +{gameState.ActualNutrientIncomePerSecond:0.0}/s";
             if (leavesText != null) leavesText.text = $"LEAVES   {gameState.LeafCount}";
 
             if (energyFill != null)
@@ -102,7 +102,7 @@ namespace TreeJam
             if (tooltipTitle != null) tooltipTitle.text = definition.displayName;
             if (tooltipDescription != null) tooltipDescription.text = definition.description;
             if (tooltipCosts != null)
-                tooltipCosts.text = $"ENERGY  {definition.energyCost:0}     NUTRIENTS  {definition.nutrientCost:0}";
+                tooltipCosts.text = $"ENERGY  {Mathf.CeilToInt(definition.energyCost)}     NUTRIENTS  {Mathf.CeilToInt(definition.nutrientCost)}";
             if (tooltipHint != null)
             {
                 bool canAfford = gameState != null && gameState.CanAfford(definition);

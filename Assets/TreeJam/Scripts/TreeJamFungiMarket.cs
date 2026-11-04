@@ -41,6 +41,8 @@ namespace TreeJam
         [Range(.08f, .6f)] public float packetDiameter = .28f;
         public Color energyParcelColor = new Color(1f, .83f, .35f, 1f);
         public Color nutrientParcelColor = new Color(.55f, 1f, .72f, 1f);
+        [Tooltip("Optional HDR glow material for the traveling packet CORE. The soft halo stays unlit; assign via Tools > Tree Jam > Enable Fungal Mail Glow.")]
+        public Material packetCoreGlowMaterial;
         [Tooltip("Send alternating parcels to the left and right fungal endpoints.")]
         public bool alternateSides = true;
         [Header("Mushroom trading (new mode)")]
@@ -288,6 +290,12 @@ namespace TreeJam
                 network.soilCenterY + network.centerRootDepth, -0.02f);
             parcelHalo = NewPacketSprite("Soft outer glow", packetDiameter * 2.1f * courierScale, color, -1);
             parcelCore = NewPacketSprite("Resource packet", packetDiameter * courierScale, color, 0);
+            // Mail sprites are created dynamically when trading, so editing the mushroom
+            // prefab or an orb material cannot affect the traveling packet.
+            // Use HDR on the tiny core; leave the larger soft halo unlit to avoid
+            // a huge glowing blob. SpriteRenderer.color still changes on return.
+            if (parcelCore != null && packetCoreGlowMaterial != null)
+                parcelCore.sharedMaterial = packetCoreGlowMaterial;
         }
 
         private SpriteRenderer NewPacketSprite(string name, float size, Color color, int depthOffset)

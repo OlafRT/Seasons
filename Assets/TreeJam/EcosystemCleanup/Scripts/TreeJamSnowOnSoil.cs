@@ -15,6 +15,11 @@ namespace TreeJam
         [Range(0f, 90f)] public float snowflakesPerSecond = 20f;
         public Color snowColor = new Color(.90f,.95f,1f,.98f);
         public bool forceWinterPreview;
+        [Header("Sorting (runtime renderers)")]
+        [Tooltip("Snow blanket render order. Keep above grass but behind tree and mushrooms.")]
+        public int blanketSortingOrder = -5;
+        [Tooltip("Falling snowflake render order; separate from the ground blanket.")]
+        public int snowfallSortingOrder = 18;
         [Range(32, 256)] public int surfaceSamples = 130;
 
         private LineRenderer blanket;
@@ -40,7 +45,7 @@ namespace TreeJam
             blanket.alignment = LineAlignment.View;
             blanket.numCapVertices = 3;
             blanket.numCornerVertices = 4;
-            blanket.sortingOrder = 16;
+            blanket.sortingOrder = blanketSortingOrder;
             blanket.startColor = blanket.endColor = snowColor;
             blanket.positionCount = surfaceSamples;
             blanket.enabled = false;
@@ -69,7 +74,7 @@ namespace TreeJam
             shape.shapeType = ParticleSystemShapeType.Box;
             var particleRenderer = snowfall.GetComponent<ParticleSystemRenderer>();
             particleRenderer.sharedMaterial = mat;
-            particleRenderer.sortingOrder = 18;
+            particleRenderer.sortingOrder = snowfallSortingOrder;
             snowfall.Play();
             if (ground == null || ground.soilOutline == null)
                 Debug.LogWarning("Snow is waiting for a valid soil collider in TreeJamSoilSurface.", this);
@@ -82,6 +87,8 @@ namespace TreeJam
                 Time.deltaTime / Mathf.Max(1f, winter ? buildSeconds : meltSeconds));
             if (blanket != null)
             {
+                // Apply Inspector changes even while the game is playing.
+                blanket.sortingOrder = blanketSortingOrder;
                 blanket.enabled = coverage > .005f && ground != null && ground.soilOutline != null;
                 blanket.widthMultiplier = Mathf.Max(.001f, maximumThickness * coverage);
                 Color tint = snowColor;
@@ -102,6 +109,8 @@ namespace TreeJam
             }
             if (snowfall != null)
             {
+                var particleRenderer = snowfall.GetComponent<ParticleSystemRenderer>();
+                if (particleRenderer != null) particleRenderer.sortingOrder = snowfallSortingOrder;
                 var em = snowfall.emission;
                 em.rateOverTime = winter ? snowflakesPerSecond : 0f;
                 if (sceneCamera != null)

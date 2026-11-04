@@ -113,9 +113,8 @@ namespace TreeJam
             public float progress;
             public float elapsed;
             public bool expanding;
-            public Limb growthParent;
-            public float growthParentThreshold;
             public bool root;
+            public float parentAttachT = .48f;
             public LineRenderer line;
             public readonly List<Fork> forks = new List<Fork>();
             public readonly List<Limb> offshoots = new List<Limb>();
@@ -126,10 +125,8 @@ namespace TreeJam
         private readonly List<Limb> limbs = new List<Limb>();
         private readonly List<BonsaiLeaf> fallenLeaves = new List<BonsaiLeaf>();
         private readonly HashSet<UpgradeDefinition> renderedUpgrades = new HashSet<UpgradeDefinition>();
-        // The primary limb is keyed by purchased upgrade. This prevents a child from
-        // attaching to the wrong side of the tree or a decorative twig.
-        private readonly Dictionary<UpgradeDefinition, Limb> primaryLimbsByUpgrade =
-            new Dictionary<UpgradeDefinition, Limb>();
+        private readonly Dictionary<UpgradeDefinition, Limb> upgradeLimbs = new Dictionary<UpgradeDefinition, Limb>();
+        private readonly List<BonsaiGrowthLink> queuedLinks = new List<BonsaiGrowthLink>();
 
         private void Start()
         {
@@ -178,15 +175,22 @@ namespace TreeJam
             foreach (Limb limb in limbs)
             {
                 if (!limb.expanding) continue;
-                // Never grow a child while its attachment point is still
-                // missing because the player's parent branch is unfurling.
-                if (limb.growthParent != null &&
-                    limb.growthParent.progress < limb.growthParentThreshold) continue;
                 limb.elapsed += Time.deltaTime;
                 float t = Mathf.Clamp01(limb.elapsed / Mathf.Max(.2f, secondsToGrowNewBranch));
                 limb.progress = Mathf.SmoothStep(0f, 1f, t);
                 DrawLimb(limb);
                 if (t >= 1f) limb.expanding = false;
+            }
+            // Orbs become purchasable as soon as their prerequisite is purchased, but
+            // their wood must not appear in empty air before the parent has grown.
+            for (int i = queuedLinks.Count - 1; i >= 0; i--)
+            {
+                BonsaiGrowthLink link = queuedLinks[i];
+                if (link == null) { queuedLinks.RemoveAt(i); continue; }
+                if (!IsParentReady(link)) continue;
+                queuedLinks.RemoveAt(i);
+                Limb added = AddUpgradeLimb(link, false);
+                SyncLeafBudget(added != null && !added.root ? added : null, false);
             }
             foreach (Limb limb in limbs)
             foreach (LeafSlot leaf in limb.leaves)
@@ -407,13 +411,29 @@ namespace TreeJam
             {
                 if (link.gameObject.scene != gameObject.scene) continue;
                 if (GetUpgrade(link) != upgrade) continue;
+                if (!IsParentReady(link))
+                {
+                    if (!queuedLinks.Contains(link)) queuedLinks.Add(link);
+                    continue;
+                }
                 Limb newLimb = AddUpgradeLimb(link, false);
                 if (newLimb != null && !newLimb.root) newestCanopyLimb = newLimb;
             }
             // TreeGameState has already applied AddLeaves before publishing
-            // UpgradePurchased. Give newly earned leaves priority on the limb
-            // that was just unlocked, then fill gaps elsewhere in the crown.
+            // UpgradePurchased. The late Crown Abundance upgrade deliberately
+            // spreads new leaves around ALL existing pads, including branch tips.
+            if (upgrade != null && upgrade.displayName == "Crown Abundance")
+                newestCanopyLimb = null;
             SyncLeafBudget(newestCanopyLimb, instant: false);
+        }
+
+        private bool IsParentReady(BonsaiGrowthLink link)
+        {
+            if (link == null || link.parentOrb == null || link.parentOrb.definition == null)
+                return true;
+            if (!upgradeLimbs.TryGetValue(link.parentOrb.definition, out Limb parent))
+                return false; // Parent might be queued behind another growing branch.
+            return !parent.expanding && parent.progress >= .999f;
         }
 
         [ContextMenu("DEBUG - Reconcile Leaves With LeafCount (Play Mode)")]
@@ -588,55 +608,55 @@ namespace TreeJam
             UpgradeDefinition upgrade = GetUpgrade(link);
             if (upgrade == null || renderedUpgrades.Contains(upgrade)) return null;
 
+            // V3+ nodes store their endpoints in the orb Transform (not the legacy
+            // Start/End fields). Recompute from the LIVE orb positions so the user can
+            // drag an orb to sculpt the tree without rebuilding any definitions.
+            Vector2 endpoint = link.growToOrb
+                ? (Vector2)transform.InverseTransformPoint(link.transform.position)
+                : link.end;
             Vector2 start = link.start;
-            Vector2 end = link.growToOrb ? OrbWorldToModel(link.transform.position) : link.end;
             Limb parent = null;
-            float t = 0f;
+            float at = .84f;
             if (link.parentOrb != null)
             {
-                // A selected child MUST grow from its stated parent, never from
-                // whichever nearby twig happens to be closest.
-                UpgradeDefinition parentUpgrade = link.parentOrb.definition;
-                if (parentUpgrade == null || !primaryLimbsByUpgrade.TryGetValue(parentUpgrade, out parent))
+                UpgradeDefinition parentDef = link.parentOrb.definition;
+                if (parentDef != null && upgradeLimbs.TryGetValue(parentDef, out Limb exactParent))
                 {
-                    Debug.LogWarning("Bonsai: '" + upgrade.displayName +
-                        "' has no grown parent. Check Parent Orb and upgrade prerequisites.", link);
-                    return null;
+                    parent = exactParent;
+                    at = maximumTipAttachment;
+                    start = Bezier(parent, at);
                 }
-                // Its physical connection is slightly behind the parent's tip,
-                // creating a proper fork while the child points to its own orb.
-                t = Mathf.Min(maximumTipAttachment, .86f);
-                start = Bezier(parent, t);
-                AddFork(parent, t, link.baseThickness);
+                else start = (Vector2)transform.InverseTransformPoint(link.parentOrb.transform.position);
             }
-            else if (FindConnection(start, link.isRoot, out parent, out t, link.baseThickness * .70f))
+            else if (FindConnection(start, link.isRoot, out Limb nearbyParent, out float nearbyT,
+                link.baseThickness * .70f))
             {
-                t = Mathf.Min(t, maximumTipAttachment);
-                start = Bezier(parent, t);
-                AddFork(parent, t, link.baseThickness);
+                parent = nearbyParent;
+                at = Mathf.Min(nearbyT, maximumTipAttachment);
+                start = Bezier(parent, at);
             }
 
-            Vector2 dir = end - start;
-            if (dir.sqrMagnitude < .035f)
+            Vector2 direction = endpoint - start;
+            if (direction.sqrMagnitude < .025f)
             {
-                Debug.LogWarning("Bonsai: '" + upgrade.displayName +
-                    "' orb is too close to its start. Move the orb farther away.", link);
+                Debug.LogWarning("Bonsai: orb " + upgrade.displayName +
+                    " is too close to its parent's attachment point. Reposition the orb.", link);
                 return null;
             }
-            Vector2 perpendicular = new Vector2(-dir.y, dir.x).normalized;
-            Vector2 b = start + dir * .30f + perpendicular * link.bend;
-            Vector2 c = start + dir * .67f + perpendicular * link.bend * .65f;
-            Limb limb = MakeLimb(upgrade.displayName, start, b, c, end,
+            renderedUpgrades.Add(upgrade);
+            if (parent != null) AddFork(parent, at, link.baseThickness);
+            Vector2 perpendicular = new Vector2(-direction.y, direction.x).normalized;
+            Vector2 b = start + direction * .30f + perpendicular * link.bend;
+            Vector2 c = start + direction * .67f + perpendicular * link.bend * .65f;
+            Limb limb = MakeLimb(upgrade.displayName, start, b, c, endpoint,
                 link.baseThickness, link.isRoot, link.isRoot ? 0 : link.foliageClusters);
+            upgradeLimbs[upgrade] = limb;
             limb.progress = fullyGrown ? 1f : 0f;
             limb.expanding = !fullyGrown;
-            limb.growthParent = parent;
-            limb.growthParentThreshold = t;
-            renderedUpgrades.Add(upgrade);
-            primaryLimbsByUpgrade[upgrade] = limb;
 
-            // Only add small side twigs on canopy limbs, so roots remain clean.
-            // Twigs themselves are not valid parent candidates for orb-guided children.
+            // Decorative offshoots start growing ONLY after the parent has
+            // physically reached their attachment site. Previously both twigs
+            // started at 48% of the main growth, including the twig at 78%.
             for (int n = 0; n < 2; n++)
             {
                 float along = n == 0 ? .57f : .78f;
@@ -649,6 +669,7 @@ namespace TreeJam
                 Limb twig = MakeLimb(upgrade.displayName + " twig " + n, twigStart,
                     twigStart + tangent * .12f, twigEnd - side * .10f, twigEnd,
                     twigWidth, link.isRoot, link.isRoot ? 0 : 1);
+                twig.parentAttachT = along;
                 twig.progress = fullyGrown ? 1f : 0f;
                 twig.expanding = false;
                 limb.offshoots.Add(twig);
@@ -656,17 +677,6 @@ namespace TreeJam
             }
             DrawLimb(limb);
             return limb;
-        }
-
-        private Vector2 OrbWorldToModel(Vector3 worldPosition)
-        {
-            // Procedural wood is rendered underneath a slowly scaling age root.
-            // Undo that scale so the endpoint matches the actual editor orb position
-            // at the moment the player purchases the upgrade.
-            Vector3 local = transform.InverseTransformPoint(worldPosition);
-            float k = generated != null ? Mathf.Max(.001f, generated.localScale.x) : 1f;
-            return new Vector2(local.x / k,
-                GroundY + (local.y - GroundY) / k);
         }
 
         private bool FindConnection(Vector2 attachment, bool isRoot, out Limb parent, out float at, float minimumParentWidth = 0f)
@@ -865,7 +875,8 @@ namespace TreeJam
             }
             foreach (Limb offshoot in limb.offshoots)
             {
-                offshoot.progress = Mathf.Clamp01((p - .48f) / .52f);
+                offshoot.progress = Mathf.Clamp01((p - offshoot.parentAttachT) /
+                    Mathf.Max(.04f, 1f - offshoot.parentAttachT));
                 DrawLimb(offshoot);
             }
         }
