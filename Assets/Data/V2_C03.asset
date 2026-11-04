@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91f0aad02a63d5a448f4117e34404db7, type: 3}
   m_Name: V2_C03
   m_EditorClassIdentifier: Assembly-CSharp::TreeJam.UpgradeDefinition
-  displayName: Eastward Bough
-  description: Grow an eastern bough. Add 2 leaves.
+  displayName: Stretch East
+  description: Grow your eastern branch. Add 2 leaves.
   energyCost: 23
   nutrientCost: 11
   prerequisites: []

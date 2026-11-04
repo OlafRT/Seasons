@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91f0aad02a63d5a448f4117e34404db7, type: 3}
   m_Name: V2_C01
   m_EditorClassIdentifier: Assembly-CSharp::TreeJam.UpgradeDefinition
-  displayName: Westward Bough
-  description: Grow a western bough. Add 2 leaves.
+  displayName: Stretch West
+  description: Grow out your western branch. Add 2 leaves.
   energyCost: 23
   nutrientCost: 11
   prerequisites: []

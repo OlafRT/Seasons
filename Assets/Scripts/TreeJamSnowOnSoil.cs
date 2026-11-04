@@ -66,8 +66,11 @@ namespace TreeJam
             main.maxParticles = 800;
             var velocity = snowfall.velocityOverLifetime;
             velocity.enabled = true;
+            // Unity requires X, Y, and Z velocity curves to use matching modes.
+            // X/Y use Two Constants; set Z to Two Constants too (zero depth motion).
             velocity.x = new ParticleSystem.MinMaxCurve(-.07f,.07f);
             velocity.y = new ParticleSystem.MinMaxCurve(-.9f,-.55f);
+            velocity.z = new ParticleSystem.MinMaxCurve(0f, 0f);
             var em = snowfall.emission;
             em.rateOverTime = 0f;
             var shape = snowfall.shape;

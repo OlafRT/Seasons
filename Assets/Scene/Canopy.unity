@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: bd739b200604b3c43ad411c601cb1338, type: 2}
+  m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -329,7 +329,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5695325}
   m_Layer: 0
-  m_Name: Glowing Orb - change visuals here
+  m_Name: Glowing Orb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -879,7 +879,7 @@ GameObject:
   m_Component:
   - component: {fileID: 20431196}
   m_Layer: 0
-  m_Name: Glowing Orb - change visuals here
+  m_Name: Glowing Orb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1283,7 +1283,7 @@ GameObject:
   m_Component:
   - component: {fileID: 24709972}
   m_Layer: 0
-  m_Name: Glowing Orb - change visuals here
+  m_Name: Glowing Orb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1317,7 +1317,7 @@ GameObject:
   - component: {fileID: 26094318}
   - component: {fileID: 26094319}
   m_Layer: 0
-  m_Name: Mushroom art - replace sprite here
+  m_Name: Mushroom art
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1333,7 +1333,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.7, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.70703465, y: 0.70703465, z: 0.70703465}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1095212461}
@@ -1387,7 +1387,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: d4d014dd3f4c3d547b8b12e6856c0fb2, type: 3}
+  m_Sprite: {fileID: -3701341616851731639, guid: 8f15c172550e0e443a992c5f9a67fbb8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1740,7 +1740,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.03529412}
+  m_Color: {r: 0.6698113, g: 0.6698113, b: 0.6698113, a: 0.03529412}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 0
@@ -2112,7 +2112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.4, g: 0.4, b: 0.4, a: 0.5019608}
+  m_Color: {r: 0.101960786, g: 0.101960786, b: 0.101960786, a: 0.5019608}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3144,7 +3144,7 @@ GameObject:
   m_Component:
   - component: {fileID: 122277466}
   m_Layer: 0
-  m_Name: Glowing Orb - change visuals here
+  m_Name: Glowing Orb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3177,7 +3177,7 @@ GameObject:
   m_Component:
   - component: {fileID: 124230155}
   m_Layer: 0
-  m_Name: Glowing Orb - change visuals here
+  m_Name: Glowing Orb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3383,7 +3383,7 @@ GameObject:
   m_Component:
   - component: {fileID: 130280895}
   m_Layer: 0
-  m_Name: Glowing Orb - change visuals here
+  m_Name: Glowing Orb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4576,7 +4576,7 @@ GameObject:
   m_Component:
   - component: {fileID: 245462921}
   m_Layer: 0
-  m_Name: Glowing Orb - change visuals here
+  m_Name: Glowing Orb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4780,7 +4780,7 @@ GameObject:
   m_Component:
   - component: {fileID: 260947910}
   m_Layer: 0
-  m_Name: Glowing Orb - change visuals here
+  m_Name: Glowing Orb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4813,7 +4813,7 @@ GameObject:
   m_Component:
   - component: {fileID: 271725931}
   m_Layer: 0
-  m_Name: Glowing Orb - change visuals here
+  m_Name: Glowing Orb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5262,7 +5262,7 @@ GameObject:
   m_Component:
   - component: {fileID: 326982190}
   m_Layer: 0
-  m_Name: Glowing Orb - change visuals here
+  m_Name: Glowing Orb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5403,7 +5403,7 @@ GameObject:
   m_Component:
   - component: {fileID: 340045938}
   m_Layer: 0
-  m_Name: Glowing Orb - change visuals here
+  m_Name: Glowing Orb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5669,7 +5669,7 @@ GameObject:
   - component: {fileID: 366869076}
   - component: {fileID: 366869077}
   m_Layer: 0
-  m_Name: Mushroom art - replace sprite here
+  m_Name: Mushroom art
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5685,7 +5685,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.7, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.573594, y: 0.573594, z: 0.573594}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 61650765}
@@ -5739,7 +5739,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: d4d014dd3f4c3d547b8b12e6856c0fb2, type: 3}
+  m_Sprite: {fileID: -3701341616851731639, guid: 8f15c172550e0e443a992c5f9a67fbb8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -6424,7 +6424,7 @@ GameObject:
   m_Component:
   - component: {fileID: 407660229}
   m_Layer: 0
-  m_Name: Glowing Orb - change visuals here
+  m_Name: Glowing Orb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6659,6 +6659,7 @@ GameObject:
   - component: {fileID: 424043959}
   - component: {fileID: 424043961}
   - component: {fileID: 424043962}
+  - component: {fileID: 424043963}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -6801,6 +6802,14 @@ MonoBehaviour:
   largestTreeSizeSeen: 0
   currentGrowth01: 0
   safeMaximumSize: 0
+--- !u!81 &424043963
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 424043958}
+  m_Enabled: 1
 --- !u!1 &436417939
 GameObject:
   m_ObjectHideFlags: 0
@@ -8115,7 +8124,7 @@ GameObject:
   m_Component:
   - component: {fileID: 526528381}
   m_Layer: 0
-  m_Name: Glowing Orb - change visuals here
+  m_Name: Glowing Orb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8921,7 +8930,7 @@ GameObject:
   m_Component:
   - component: {fileID: 557199122}
   m_Layer: 0
-  m_Name: Glowing Orb - change visuals here
+  m_Name: Glowing Orb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9923,6 +9932,7 @@ MonoBehaviour:
   showWoodChips: 1
   treeFallSeconds: 2.45
   fallingAngle: 84
+  finalChopRecoverySeconds: 0.85
   fadeSeconds: 2.5
   blackHoldSeconds: 6
   newSproutRevealSeconds: 5
@@ -9931,9 +9941,9 @@ MonoBehaviour:
   maximumTrunkThickness: 1.8
   saveRebirthCountBetweenSessions: 1
   showOldStumpOnRebirth: 1
-  chopSound: {fileID: 0}
-  treeCrashSound: {fileID: 0}
-  audioSource: {fileID: 0}
+  chopSound: {fileID: 8300000, guid: d8095b619dce70c4cb0237cbba1fa3f4, type: 3}
+  treeCrashSound: {fileID: 8300000, guid: 00bf1dcd0bbc3f84fb6bebd99651396d, type: 3}
+  audioSource: {fileID: 1685227865}
 --- !u!4 &602960139
 Transform:
   m_ObjectHideFlags: 0
@@ -10068,7 +10078,7 @@ GameObject:
   m_Component:
   - component: {fileID: 609905112}
   m_Layer: 0
-  m_Name: Glowing Orb - change visuals here
+  m_Name: Glowing Orb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10794,7 +10804,7 @@ GameObject:
   m_Component:
   - component: {fileID: 667667611}
   m_Layer: 0
-  m_Name: Glowing Orb - change visuals here
+  m_Name: Glowing Orb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11518,7 +11528,7 @@ GameObject:
   m_Component:
   - component: {fileID: 681615175}
   m_Layer: 0
-  m_Name: Glowing Orb - change visuals here
+  m_Name: Glowing Orb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11935,7 +11945,7 @@ GameObject:
   m_Component:
   - component: {fileID: 713128654}
   m_Layer: 0
-  m_Name: Glowing Orb - change visuals here
+  m_Name: Glowing Orb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12381,7 +12391,7 @@ GameObject:
   m_Component:
   - component: {fileID: 738795429}
   m_Layer: 0
-  m_Name: Glowing Orb - change visuals here
+  m_Name: Glowing Orb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12506,7 +12516,7 @@ GameObject:
   m_Component:
   - component: {fileID: 740706698}
   m_Layer: 0
-  m_Name: Glowing Orb - change visuals here
+  m_Name: Glowing Orb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12834,6 +12844,7 @@ GameObject:
   - component: {fileID: 753047085}
   - component: {fileID: 753047084}
   - component: {fileID: 753047083}
+  - component: {fileID: 753047088}
   m_Layer: 0
   m_Name: UI
   m_TagString: Untagged
@@ -12961,6 +12972,35 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &753047088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 753047082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47aa7bc2ed227ec4caa61024d8097a06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TreeJam.TreeJamResourceBarTooltips
+  ui: {fileID: 753047083}
+  canvas: {fileID: 753047086}
+  energyBarBackground: {fileID: 75727988}
+  nutrientBarBackground: {fileID: 1980101729}
+  energyCaption: {fileID: 459830933}
+  nutrientCaption: {fileID: 1964213784}
+  energyExplanation: Energy is produced by your leaves through photosynthesis.
+  nutrientExplanation: Nutrients are absorbed from the soil through your roots.
+  font: {fileID: 12800000, guid: d96eb4764b34ce9468e4c3756e760604, type: 3}
+  panelColor: {r: 0.101960786, g: 0.101960786, b: 0.101960786, a: 0.5019608}
+  bodyColor: {r: 0.89, g: 0.93, b: 0.85, a: 1}
+  energyHeaderColor: {r: 0.98, g: 0.84, b: 0.47, a: 1}
+  nutrientHeaderColor: {r: 0.56, g: 0.84, b: 0.59, a: 1}
+  width: 355
+  height: 84
+  cursorOffset: {x: 20, y: -16}
+  canvasMargin: 12
 --- !u!1 &762307565
 GameObject:
   m_ObjectHideFlags: 0
@@ -13206,7 +13246,7 @@ GameObject:
   m_Component:
   - component: {fileID: 786404461}
   m_Layer: 0
-  m_Name: Glowing Orb - change visuals here
+  m_Name: Glowing Orb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13755,7 +13795,7 @@ GameObject:
   m_Component:
   - component: {fileID: 854948056}
   m_Layer: 0
-  m_Name: Glowing Orb - change visuals here
+  m_Name: Glowing Orb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13788,7 +13828,7 @@ GameObject:
   m_Component:
   - component: {fileID: 864501660}
   m_Layer: 0
-  m_Name: Glowing Orb - change visuals here
+  m_Name: Glowing Orb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14405,7 +14445,7 @@ GameObject:
   m_Component:
   - component: {fileID: 883421338}
   m_Layer: 0
-  m_Name: Glowing Orb - change visuals here
+  m_Name: Glowing Orb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16492,7 +16532,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1018352607}
   m_Layer: 0
-  m_Name: Glowing Orb - change visuals here
+  m_Name: Glowing Orb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17819,7 +17859,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1078060353}
   m_Layer: 0
-  m_Name: Glowing Orb - change visuals here
+  m_Name: Glowing Orb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18852,7 +18892,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1146852868}
   m_Layer: 0
-  m_Name: Glowing Orb - change visuals here
+  m_Name: Glowing Orb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20396,7 +20436,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1226446227}
   m_Layer: 0
-  m_Name: Glowing Orb - change visuals here
+  m_Name: Glowing Orb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20613,7 +20653,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1250193357}
   m_Layer: 0
-  m_Name: Glowing Orb - change visuals here
+  m_Name: Glowing Orb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21788,7 +21828,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1309560367}
   m_Layer: 0
-  m_Name: Glowing Orb - change visuals here
+  m_Name: Glowing Orb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22278,8 +22318,8 @@ MonoBehaviour:
   centerRootDepth: 0.25
   spawnOffsetFromTree: 10
   mainThreadWidth: 0.05
-  threadColor: {r: 0.85, g: 0.92, b: 0.78, a: 0.95}
-  mushroomColor: {r: 0.91, g: 0.88, b: 0.73, a: 0.98}
+  threadColor: {r: 0.74509805, g: 0.6117647, b: 0.4666667, a: 1}
+  mushroomColor: {r: 0.74509805, g: 0.6117647, b: 0.4666667, a: 1}
   mushroomPrefab: {fileID: 0}
 --- !u!4 &1341867729
 Transform:
@@ -22339,7 +22379,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1360698102}
   m_Layer: 0
-  m_Name: Glowing Orb - change visuals here
+  m_Name: Glowing Orb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23562,7 +23602,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1448753248}
   m_Layer: 0
-  m_Name: Glowing Orb - change visuals here
+  m_Name: Glowing Orb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23803,7 +23843,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1483662862}
   m_Layer: 0
-  m_Name: Glowing Orb - change visuals here
+  m_Name: Glowing Orb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24145,7 +24185,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1509005780}
   m_Layer: 0
-  m_Name: Glowing Orb - change visuals here
+  m_Name: Glowing Orb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24309,7 +24349,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.03529412}
+  m_Color: {r: 0.6698113, g: 0.6698113, b: 0.6698113, a: 0.03529412}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 0
@@ -24748,7 +24788,7 @@ GameObject:
   - component: {fileID: 1547764199}
   - component: {fileID: 1547764200}
   m_Layer: 0
-  m_Name: Mushroom art - replace sprite here
+  m_Name: Mushroom art
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24764,7 +24804,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.7, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: -0.61330545, y: 0.61330545, z: 0.61330545}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 682084365}
@@ -24818,7 +24858,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: d4d014dd3f4c3d547b8b12e6856c0fb2, type: 3}
+  m_Sprite: {fileID: -3701341616851731639, guid: 8f15c172550e0e443a992c5f9a67fbb8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -25652,7 +25692,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1584363129}
   m_Layer: 0
-  m_Name: Glowing Orb - change visuals here
+  m_Name: Glowing Orb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25675,6 +25715,96 @@ Transform:
   - {fileID: 595903483}
   m_Father: {fileID: 298595103}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1586583004
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1586583006}
+  - component: {fileID: 1586583005}
+  - component: {fileID: 1586583007}
+  m_Layer: 0
+  m_Name: Audio
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1586583005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1586583004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5bc46c1589269542851d51969bb00b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TreeJam.TreeJamSeasonAudio
+  seasons: {fileID: 1332450896}
+  dayNight: {fileID: 342451976}
+  endgame: {fileID: 602960138}
+  music: {fileID: 8300000, guid: 18dff899ffa284e49b60591d31083456, type: 3}
+  musicVolume: 0.025
+  springDay: {fileID: 8300000, guid: 026db3269b5dab246a7c06c049fa5efd, type: 3}
+  springNight: {fileID: 8300000, guid: a71f1ebd77e06a8419ebc71415512168, type: 3}
+  summerDay: {fileID: 8300000, guid: 02a25b82cb2d5d6458967907d3049817, type: 3}
+  summerNight: {fileID: 8300000, guid: a9613bf81d60de94187502684c82f231, type: 3}
+  autumnDay: {fileID: 8300000, guid: e334f4f596e919c4d91982c69e185022, type: 3}
+  autumnNight: {fileID: 8300000, guid: 00fd75dc6096a0c439e506914fef8605, type: 3}
+  winter: {fileID: 8300000, guid: c029d676dbcc3784f9086b6804d33235, type: 3}
+  ambienceVolume: 0.6
+  ambienceCrossfadeSeconds: 3
+  lumberjackMusicFadeSeconds: 2.25
+  musicDuringEndingMultiplier: 0
+  ambienceDuringEndingMultiplier: 1
+  startingMusicFadeInSeconds: 2
+  startingAmbienceFadeInSeconds: 2
+--- !u!4 &1586583006
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1586583004}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.30771, y: 2.08151, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1586583007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1586583004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d247e653801b8e344a68a7197267bca2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TreeJam.TreeJamWorldInteractionSounds
+  hoverSound: {fileID: 8300000, guid: 695e1409f5081be49b51d0992d86849d, type: 3}
+  upgradePurchasedSound: {fileID: 8300000, guid: a1768a97eca8b774fb1d44dbce2afd2e, type: 3}
+  fungalUpgradePurchasedSound: {fileID: 8300000, guid: c4a9eeeec75b5684ea5ec8d445d936a2, type: 3}
+  mushroomTradeSound: {fileID: 8300000, guid: 13919b62f83bb2b4e95bf513bb19420d, type: 3}
+  unsuccessfulClickSound: {fileID: 8300000, guid: a143d6850cd70734c93e6a50b92a40d2, type: 3}
+  hoverVolume: 0.05
+  purchasedVolume: 0.2
+  fungalUpgradeVolume: 0.1
+  tradeVolume: 0.1
+  unsuccessfulVolume: 0.1
+  randomizePitch: 1
+  hoverPitchRange: {x: 0.98, y: 1.02}
+  clickPitchRange: {x: 0.96, y: 1.04}
+  worldCamera: {fileID: 0}
 --- !u!1 &1609992323
 GameObject:
   m_ObjectHideFlags: 0
@@ -26053,7 +26183,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1641546725}
   m_Layer: 0
-  m_Name: Glowing Orb - change visuals here
+  m_Name: Glowing Orb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26086,7 +26216,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1645812067}
   m_Layer: 0
-  m_Name: Glowing Orb - change visuals here
+  m_Name: Glowing Orb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26119,7 +26249,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1647196690}
   m_Layer: 0
-  m_Name: Glowing Orb - change visuals here
+  m_Name: Glowing Orb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26152,7 +26282,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1647280770}
   m_Layer: 0
-  m_Name: Glowing Orb - change visuals here
+  m_Name: Glowing Orb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26568,7 +26698,7 @@ MonoBehaviour:
   smallStrandWidth: 0.038
   extraBranchCountPerSide: 12
   offscreenExtension: 0.6
-  hyphaColor: {r: 0.92, g: 0.96, b: 0.85, a: 1}
+  hyphaColor: {r: 0.74509805, g: 0.6117647, b: 0.4666667, a: 1}
   fruitColor: {r: 0.96, g: 0.88, b: 0.71, a: 1}
   hideLegacyFloatingMushrooms: 1
   hideMushroomFruitsInWinter: 1
@@ -26755,6 +26885,7 @@ GameObject:
   - component: {fileID: 1685227862}
   - component: {fileID: 1685227863}
   - component: {fileID: 1685227864}
+  - component: {fileID: 1685227865}
   m_Layer: 0
   m_Name: The Tree
   m_TagString: Untagged
@@ -26804,10 +26935,10 @@ MonoBehaviour:
   rootColor: {r: 0.2924528, g: 0.15448113, b: 0.13105197, a: 1}
   leafColor: {r: 0.24, g: 0.7, b: 0.24, a: 1}
   leafHighlight: {r: 0.48, g: 0.87, b: 0.33, a: 1}
-  customLeafSprite: {fileID: 21300000, guid: b1793e7dbd1e2ac4ebbbea267e2233c3, type: 3}
+  customLeafSprite: {fileID: -7195849374166079074, guid: 1696ed7513d552c489ba9710258ac2e8, type: 3}
   leafMaterial: {fileID: 2100000, guid: 52d5f7e7838020a4da963c385124f3ef, type: 2}
   woodMaterial: {fileID: 2100000, guid: 78946e98c4992514a87f24690092ab8f, type: 2}
-  leafSize: 1.079
+  leafSize: 0.668
   trunkThickness: 1
   leavesPerCluster: 19
   foliagePadRadius: 0.36
@@ -26849,6 +26980,103 @@ MonoBehaviour:
   rootletGrowthSeconds: 3.5
   rootletsPerExistingRoot: 2
   rootletWidth: 0.035
+--- !u!82 &1685227865
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1685227861}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1701290645
 GameObject:
   m_ObjectHideFlags: 0
@@ -26859,7 +27087,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1701290646}
   m_Layer: 0
-  m_Name: Glowing Orb - change visuals here
+  m_Name: Glowing Orb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27370,7 +27598,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1755974633}
   m_Layer: 0
-  m_Name: Glowing Orb - change visuals here
+  m_Name: Glowing Orb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27403,7 +27631,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1757364154}
   m_Layer: 0
-  m_Name: Glowing Orb - change visuals here
+  m_Name: Glowing Orb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28728,7 +28956,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.3962264, g: 0.3962264, b: 0.3962264, a: 0.5019608}
+  m_Color: {r: 0.103773594, g: 0.103773594, b: 0.103773594, a: 0.5019608}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -28803,7 +29031,7 @@ GameObject:
   - component: {fileID: 1849222915}
   - component: {fileID: 1849222916}
   m_Layer: 0
-  m_Name: Mushroom art - replace sprite here
+  m_Name: Mushroom art
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28819,7 +29047,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.7, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: -0.5103388, y: 0.5103388, z: 0.5103388}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 511434335}
@@ -28873,7 +29101,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: d4d014dd3f4c3d547b8b12e6856c0fb2, type: 3}
+  m_Sprite: {fileID: -3701341616851731639, guid: 8f15c172550e0e443a992c5f9a67fbb8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -29170,7 +29398,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1866620381}
   m_Layer: 0
-  m_Name: Glowing Orb - change visuals here
+  m_Name: Glowing Orb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31021,7 +31249,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1973213869}
   m_Layer: 0
-  m_Name: Glowing Orb - change visuals here
+  m_Name: Glowing Orb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31307,7 +31535,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1996385517}
   m_Layer: 0
-  m_Name: Glowing Orb - change visuals here
+  m_Name: Glowing Orb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31524,7 +31752,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1999453964}
   m_Layer: 0
-  m_Name: Glowing Orb - change visuals here
+  m_Name: Glowing Orb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32282,7 +32510,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2078912350}
   m_Layer: 0
-  m_Name: Glowing Orb - change visuals here
+  m_Name: Glowing Orb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32423,7 +32651,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2098316165}
   m_Layer: 0
-  m_Name: Glowing Orb - change visuals here
+  m_Name: Glowing Orb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32827,7 +33055,7 @@ SpriteRenderer:
   m_SortingOrder: -27
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: 6188d4046478b794294306d00e7a0f32, type: 3}
-  m_Color: {r: 0.3503026, g: 0.6037736, b: 0.40897647, a: 1}
+  m_Color: {r: 0.36009255, g: 0.6415094, b: 0.37292153, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -33064,7 +33292,7 @@ MonoBehaviour:
   winterRegrowthSlowdown: 1.45
   surfaceOffsetY: 0.02
   seasons: {fileID: 1332450896}
-  mushroomArt: {fileID: 21300000, guid: d4d014dd3f4c3d547b8b12e6856c0fb2, type: 3}
+  mushroomArt: {fileID: -3701341616851731639, guid: 8f15c172550e0e443a992c5f9a67fbb8, type: 3}
   mushroomMaterial: {fileID: 2100000, guid: 2c59b15f9e670374ba247e29d169da80, type: 2}
   grassSprite: {fileID: 1042441612}
   visibleBudScale: 0.2
@@ -33138,7 +33366,7 @@ MonoBehaviour:
   branchThickness: 0.075
   fineFilamentThickness: 0.045
   extraFilamentsPerUpgrade: 3
-  color: {r: 0.91, g: 0.96, b: 0.83, a: 1}
+  color: {r: 0.74509805, g: 0.6117647, b: 0.4666667, a: 1}
   strandMaterial: {fileID: 0}
   grassSprite: {fileID: 1042441612}
 --- !u!114 &2138288063
@@ -33286,3 +33514,4 @@ SceneRoots:
   - {fileID: 2138288061}
   - {fileID: 992657380}
   - {fileID: 602960139}
+  - {fileID: 1586583006}

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91f0aad02a63d5a448f4117e34404db7, type: 3}
   m_Name: V2_C02
   m_EditorClassIdentifier: Assembly-CSharp::TreeJam.UpgradeDefinition
-  displayName: Skyward Shoot
+  displayName: Stretch to the skies
   description: Grow an upward shoot. Add 2 leaves.
   energyCost: 23
   nutrientCost: 11

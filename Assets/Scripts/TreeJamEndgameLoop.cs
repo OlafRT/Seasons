@@ -42,6 +42,8 @@ namespace TreeJam
         public bool showWoodChips = true;
         [Min(.2f)] public float treeFallSeconds = 2.45f;
         [Range(45f, 105f)] public float fallingAngle = 84f;
+        [Tooltip("How quickly the lumberjack relaxes back to his standing pose after the final hit, while the tree is falling.")]
+        [Min(.1f)] public float finalChopRecoverySeconds = .85f;
         [Min(.1f)] public float fadeSeconds = 1.6f;
         [Min(0f)] public float blackHoldSeconds = 2.8f;
         [Min(.1f)] public float newSproutRevealSeconds = 3f;
@@ -232,6 +234,7 @@ namespace TreeJam
             else lumberjack.PrepareChopping(hitPoint);
             yield return new WaitForSeconds(.18f);
             GameObject falling = null;
+            float finalImpactPhase = useAuthored ? authoredChop.impactTime : TreeJamLumberjackPuppet.ContactTime;
             for (int i = 0; i < Mathf.Max(1, axeStrikes); i++)
             {
                 bool finalStrike = i == Mathf.Max(1, axeStrikes) - 1;
@@ -255,8 +258,10 @@ namespace TreeJam
 #endif
                         if (finalStrike)
                         {
-                            // Fell the tree ON the final blade impact, not after
-                            // recovering to idle or completing another strike cycle.
+                            // Start the tree falling on the actual final blade impact.
+                            // Remember where the chop stopped so its recovery can
+                            // continue smoothly while the canopy is toppling.
+                            finalImpactPhase = strikeT;
                             falling = SnapshotAndSeverTree(tree);
                             break;
                         }
@@ -269,23 +274,46 @@ namespace TreeJam
                 yield return new WaitForSeconds(.12f);
             }
 
-            // Intentionally keep the blade at the last impact pose while the
-            // trunk begins to topple. The scene reload resets the puppet later.
+            // The final hit cuts the tree immediately. As the canopy topples,
+            // finish the *same* chopping animation so the lumberjack stands up
+            // naturally instead of freezing in the blade-impact pose.
             if (falling == null) falling = SnapshotAndSeverTree(tree);
             if (falling != null)
             {
+                // This clip contains the initial creak: start it when the tree
+                // begins to tip, rather than when it is almost on the ground.
+                Play(treeCrashSound);
+
                 float fall = 0f;
-                bool crashPlayed = false;
                 float direction = sign < 0 ? -1f : 1f;
+                float recoveryDuration = Mathf.Min(Mathf.Max(.1f, finalChopRecoverySeconds),
+                    Mathf.Max(.2f, treeFallSeconds));
                 while (fall < treeFallSeconds)
                 {
                     fall += Time.deltaTime;
                     float p = Mathf.Clamp01(fall / Mathf.Max(.2f, treeFallSeconds));
                     float eased = 1f - Mathf.Pow(1f - p, 2.5f);
-                    falling.transform.localRotation = Quaternion.Euler(0f,0f,direction * fallingAngle * eased);
-                    if (!crashPlayed && p >= .90f) { Play(treeCrashSound); crashPlayed = true; }
+                    falling.transform.localRotation = Quaternion.Euler(0f, 0f,
+                        direction * fallingAngle * eased);
+
+                    // Complete the existing authored pose timeline (or procedural
+                    // chop fallback) without snapping back to idle on impact.
+                    float recovery = Mathf.Clamp01(fall / recoveryDuration);
+                    float smoothRecovery = recovery * recovery * (3f - 2f * recovery);
+                    float chopPhase = Mathf.Lerp(finalImpactPhase, 1f, smoothRecovery);
+                    if (useAuthored) authoredChop.PoseAt(chopPhase);
+                    else lumberjack.PoseChop(chopPhase);
                     yield return null;
                 }
+            }
+
+            // Ensure the final resting pose is exact, even if the fall was very
+            // short or the canopy snapshot could not be created.
+            if (useAuthored) authoredChop.PreviewPose(0);
+            else
+            {
+                lumberjack.PoseChop(1f);
+                lumberjack.FinishChopping();
             }
             yield return new WaitForSeconds(.65f);
             TreeJamEndgameTransition transition = TreeJamEndgameTransition.Create();
