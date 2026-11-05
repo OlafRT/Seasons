@@ -31,6 +31,6 @@ Material:
     m_Floats:
     - _Brightness: 2.39
     m_Colors:
-    - _HDRColor: {r: 0.90189195, g: 0.21226418, b: 1, a: 1}
+    - _HDRColor: {r: 0.7781247, g: 1, b: 0.5424528, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
